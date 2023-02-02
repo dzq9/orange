@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.sp{
+			font-size:30px;
+			font-family: 楷体;
+			color:#00A1d6;
+			font-weight:700;
+			position:absolute;
+			top:-50px;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+	var str = '郭东雨你是甩不掉我的哈哈哈哈哈哈哈';
+	var colorarr = ['pink','red','blue','lightgreen','yellow','orange','#00A1d6','violet'];//随机颜色数组
+	var a = 30;
+	for (var i = 0; i < str.length; i++) {
+		document.write('<span id="str' + i + '" class="sp">');
+		document.write(str[i]);
+		document.write('</span>');
+	}
+	document.onmousemove = function(e){
+		var e = e || event;
+		document.title = e.clientX + ' - ' + e.clientY;
+		var m = 0;
+		var timmer = setInterval(function(){
+			if (m < str.length) {
+				span = document.getElementById('str' + m);
+				var s = Math.floor(Math.random()*colorarr.length);//随机颜色下标
+            	span.style.color = colorarr[s];//赋予颜色
+				span.style.left = parseInt(e.clientX) + (m*30) + 'px';
+				span.style.top = e.clientY + 'px';
+				m++;
+			}else{
+				clearInterval(timmer);
+			}
+		},100);
+	}
+</script>
+</body>
+ 
+</html>

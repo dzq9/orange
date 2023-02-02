@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>touch事件</title>
+    <style>
+        .body{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;background: #ccc;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+    	var strart = '郭东雨你是甩不掉我的哈哈哈哈哈哈哈';
+        window.onload=function(){
+            var box=document.querySelector('.box');
+            box.addEventListener('touchstart',function(){
+                console.log('start')
+            });
+            box.addEventListener('touchmove',function(){
+                console.log('strart')
+            });
+            box.addEventListener('touchend',function(){
+                console.log('strart')
+            });
+        }
+    </script>
+</body>
+</html>
